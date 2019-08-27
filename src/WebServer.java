@@ -47,6 +47,13 @@ public class WebServer {
             PrintWriter out = new PrintWriter(server.getOutputStream());
 
             in.readLine();
+            // Send the headers
+            out.println("HTTP/1.0 200 OK");
+            out.println("Content-Type: text/html");
+            out.println("Server: Bot");
+            // this blank line signals the end of the headers
+            out.println("");
+            // Send html
             out.println(html);
             out.flush();
 
